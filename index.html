@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<title>Student Marksheet</title>
+</head>
+<body>
+
+<div class="container">
+    <h2 class="text-center">Student Marks</h2>
+    <div class="result" id="result">
+        <!-- Results will be displayed here -->
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+<script>
+    var name = prompt("Enter your full name");
+    var eng = parseInt(prompt("Enter your English marks"));
+    var comp = parseInt(prompt("Enter your Computer marks"));
+    var urdu = parseInt(prompt("Enter your Urdu marks"));
+    var chem = parseInt(prompt("Enter your Chemistry marks"));
+    var math = parseInt(prompt("Enter your Maths marks"));
+    var total = eng + comp + urdu + chem + math;
+    var parcen = total / 500 * 100;
+    document.getElementById('result').innerHTML = `
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>English marks:</strong> ${eng}</p>
+        <p><strong>Computer marks:</strong> ${comp}</p>
+        <p><strong>Urdu marks:</strong> ${urdu}</p>
+        <p><strong>Chemistry marks:</strong> ${chem}</p>
+        <p><strong>Maths marks:</strong> ${math}</p>
+        <p><strong>Total marks:</strong> ${total}</p>
+        <p><strong>Percentage:</strong> ${parcen.toFixed(2)}%</p>
+    `;
+</script>
+</body>
+</html>
